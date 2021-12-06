@@ -7,6 +7,7 @@ import 'package:ditonton/presentation/pages/popular_movies_page.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
+import 'package:ditonton/presentation/pages/watchlist_tvseriespage.dart';
 import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
 import 'package:ditonton/common/state_enum.dart';
 import 'package:flutter/cupertino.dart';
@@ -14,7 +15,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
+import 'home_tvseries_page.dart';
+
 class HomeMoviePage extends StatefulWidget {
+  static const ROUTE_NAME = '/movie';
+
   @override
   _HomeMoviePageState createState() => _HomeMoviePageState();
 }
@@ -40,19 +45,33 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               currentAccountPicture: CircleAvatar(
                 backgroundImage: AssetImage('assets/circle-g.png'),
               ),
-              accountName: Text('Ditonton'),
+              accountName: Text('Ditonton V1'),
               accountEmail: Text('ditonton@dicoding.com'),
+            ),
+            ListTile(
+              leading: Icon(Icons.monitor),
+              title: Text('TV Series'),
+              onTap: () {
+                Navigator.pushNamed(context, TVSeriesPage.ROUTE_NAME);
+              },
             ),
             ListTile(
               leading: Icon(Icons.movie),
               title: Text('Movies'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context, HomeMoviePage.ROUTE_NAME);
               },
             ),
             ListTile(
               leading: Icon(Icons.save_alt),
-              title: Text('Watchlist'),
+              title: Text('Watchlist - TV Series'),
+              onTap: () {
+                Navigator.pushNamed(context, WatchlistTVSeriesPage.ROUTE_NAME);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.save_alt),
+              title: Text('Watchlist - Movie'),
               onTap: () {
                 Navigator.pushNamed(context, WatchlistMoviesPage.ROUTE_NAME);
               },
@@ -68,7 +87,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Ditonton'),
+        title: Text('Ditonton - Movie'),
         actions: [
           IconButton(
             onPressed: () {
