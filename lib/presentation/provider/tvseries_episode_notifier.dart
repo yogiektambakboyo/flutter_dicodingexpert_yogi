@@ -1,8 +1,6 @@
 import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/tvseries.dart';
 import 'package:ditonton/domain/entities/tvseries_episode.dart';
 import 'package:ditonton/domain/usecases/get_episode_tvseries.dart';
-import 'package:ditonton/domain/usecases/get_popular_tvseries.dart';
 import 'package:flutter/foundation.dart';
 
 class EpisodeTVSeriesNotifier extends ChangeNotifier {

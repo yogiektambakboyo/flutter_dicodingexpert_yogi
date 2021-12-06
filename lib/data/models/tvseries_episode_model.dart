@@ -1,7 +1,5 @@
-import 'package:ditonton/domain/entities/tvseries.dart';
 import 'package:ditonton/domain/entities/tvseries_episode.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 
 class TVSeriesEpisodeModel extends Equatable {
   TVSeriesEpisodeModel({
