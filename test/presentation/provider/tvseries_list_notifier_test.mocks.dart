@@ -68,7 +68,7 @@ class MockGetPopularTVSeries extends _i1.Mock implements _i8.GetPopularTVSeries 
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetTopRatedTVSeries extends _i1.Mock implements _i9.GetTopRatedTVSeries {
-  MockGetTopRatedTVSeriess() {
+  MockGetTopRatedTVSeries() {
     _i1.throwOnMissingStub(this);
   }
 

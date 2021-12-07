@@ -77,7 +77,7 @@ final testTVSeries = TVSeries(
       "US"
     ],
     original_name: "Chucky",
-    overview: "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
+    overview: "After a",
     popularity: 5154.752,
     poster_path: "/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
     vote_average: 8,
@@ -99,7 +99,7 @@ final testTVSeriesDetail = TVSeriesDetail(
       "US"
     ],
     original_name: "Chucky",
-    overview: "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
+    overview: "After a",
     popularity: 5154.752,
     poster_path: "/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
     seasons: [
@@ -108,7 +108,7 @@ final testTVSeriesDetail = TVSeriesDetail(
         episode_count: 24,
         id: 1,
         name: "Season 1",
-        overview: "3,700 years after a mysterious light turns every human on the planet into stone, genius boy Senku Ishigami emerges from his petrification into a \"Stone World\" and seeks to rebuild human civilization from the ground up.",
+        overview: "3,700 years",
         poster_path: "/rSwOCqbDj7KJgvvnpV1KTzVbaP8.jpg",
         season_number: 1
       )
@@ -121,20 +121,20 @@ final testTVSeriesDetail = TVSeriesDetail(
 final testWatchlistTVSeries = TVSeries.watchlist(
   id: 1,
   name: "Chucky",
-  overview: "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
   poster_path: "/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
+  overview: "After a",
 );
 
 final testTVSeriesTable = TVSeriesTable(
   id: 1,
   name: "Chucky",
-  overview: "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
   poster_path: "/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
+  overview: "After a",
 );
 
 final testTVSeriesMap = {
   'id': 1,
   'name': "Chucky",
-  'overview': "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
   'poster_path': "/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
+  'overview': "After a",
 };

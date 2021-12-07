@@ -56,27 +56,27 @@ class MockTVSeriesDetailNotifier extends _i1.Mock
               returnValue: _FakeGetTVSeriesRecommendations())
           as _i3.GetTVSeriesRecommendations);
   @override
-  _i4.GetWatchListStatusTVSeries get getWatchListStatus =>
-      (super.noSuchMethod(Invocation.getter(#getWatchListStatus),
+  _i4.GetWatchListStatusTVSeries get getWatchListStatusTVSeries =>
+      (super.noSuchMethod(Invocation.getter(#getWatchListStatusTVSeries),
           returnValue: _FakeGetWatchListStatus()) as _i4.GetWatchListStatusTVSeries);
   @override
-  _i5.SaveWatchlistTVSeries get saveWatchlist =>
-      (super.noSuchMethod(Invocation.getter(#saveWatchlist),
+  _i5.SaveWatchlistTVSeries get saveWatchlistTVSeries =>
+      (super.noSuchMethod(Invocation.getter(#saveWatchlistTVSeries),
           returnValue: _FakeSaveWatchlist()) as _i5.SaveWatchlistTVSeries);
   @override
-  _i6.RemoveWatchlistTVSeries get removeWatchlist =>
-      (super.noSuchMethod(Invocation.getter(#removeWatchlist),
+  _i6.RemoveWatchlistTVSeries get removeWatchlistTVSeries =>
+      (super.noSuchMethod(Invocation.getter(#removeWatchlistTVSeries),
           returnValue: _FakeRemoveWatchlist()) as _i6.RemoveWatchlistTVSeries);
   @override
-  _i7.TVSeriesDetail get movie => (super.noSuchMethod(Invocation.getter(#movie),
+  _i7.TVSeriesDetail get tvseries => (super.noSuchMethod(Invocation.getter(#tvseries),
       returnValue: _FakeTVSeriesDetail()) as _i7.TVSeriesDetail);
   @override
-  _i9.RequestState get movieState =>
+  _i9.RequestState get tvseriesState =>
       (super.noSuchMethod(Invocation.getter(#movieState),
           returnValue: _i9.RequestState.Empty) as _i9.RequestState);
   @override
-  List<_i10.TVSeries> get movieRecommendations =>
-      (super.noSuchMethod(Invocation.getter(#movieRecommendations),
+  List<_i10.TVSeries> get tvseriesRecommendations =>
+      (super.noSuchMethod(Invocation.getter(#tvseriesRecommendations),
           returnValue: <_i10.TVSeries>[]) as List<_i10.TVSeries>);
   @override
   _i9.RequestState get recommendationState =>

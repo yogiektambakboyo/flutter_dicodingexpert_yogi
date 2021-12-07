@@ -9,7 +9,7 @@ import 'package:ditonton/data/models/tvseries_response.dart';
 import 'package:http/http.dart' as http;
 
 abstract class TVSeriesRemoteDataSource {
-  Future<List<TVSeriesModel>> getOnTheAirTVSeries();
+  Future<List<TVSeriesModel>> getOnTheAir();
   Future<List<TVSeriesModel>> getPopularTVSeries();
   Future<List<TVSeriesEpisodeModel>> getEpisodeTVSeries(int id, int season);
   Future<List<TVSeriesModel>> getTopRatedTVSeries();
@@ -28,7 +28,7 @@ class TVSeriesRemoteDataSourceImpl implements TVSeriesRemoteDataSource {
 
   // TV Series Section
   @override
-  Future<List<TVSeriesModel>> getOnTheAirTVSeries() async {
+  Future<List<TVSeriesModel>> getOnTheAir() async {
     final response =
     await client.get(Uri.parse('$BASE_URL/tv/on_the_air?$API_KEY'));
 

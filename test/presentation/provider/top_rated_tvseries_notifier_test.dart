@@ -39,7 +39,7 @@ void main() {
         "US"
       ],
       original_name: "Chucky",
-      overview: "After a vintage Chucky doll turns up at a suburban yard sale, an idyllic American town is thrown into chaos as a series of horrifying murders begin to expose the town’s hypocrisies and secrets. Meanwhile, the arrival of enemies — and allies — from Chucky’s past threatens to expose the truth behind the killings, as well as the demon doll’s untold origins.",
+      overview: "After a",
       popularity: 5154.752,
       poster_path: "/iF8ai2QLNiHV4anwY1TuSGZXqfN.jpg",
       vote_average: 8,
@@ -59,7 +59,7 @@ void main() {
     expect(listenerCallCount, 1);
   });
 
-  test('should change movies data when data is gotten successfully', () async {
+  test('should change tv series data when data is gotten successfully', () async {
     // arrange
     when(mockGetTopRatedTVSeries.execute())
         .thenAnswer((_) async => Right(tTVSeriesList));
@@ -67,7 +67,7 @@ void main() {
     await notifier.fetchTopRatedTVSeries();
     // assert
     expect(notifier.state, RequestState.Loaded);
-    expect(notifier.tvseries, tTVSeries);
+    expect(notifier.tvseries, tTVSeriesList);
     expect(listenerCallCount, 2);
   });
 

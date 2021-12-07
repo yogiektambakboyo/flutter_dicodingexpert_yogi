@@ -3,8 +3,8 @@ import 'package:ditonton/data/datasources/db/database_helper.dart';
 import 'package:ditonton/data/models/tvseries_table.dart';
 
 abstract class TVSeriesLocalDataSource {
-  Future<String> insertWatchlistTVSeries(TVSeriesTable movie);
-  Future<String> removeWatchlistTVSeries(TVSeriesTable movie);
+  Future<String> insertWatchlistTVSeries(TVSeriesTable tvSeriesTable);
+  Future<String> removeWatchlistTVSeries(TVSeriesTable tvSeriesTable);
   Future<TVSeriesTable?> getTVSeriesById(int id);
   Future<List<TVSeriesTable>> getWatchlistTVSeries();
 }
@@ -13,18 +13,6 @@ class TVSeriesLocalDataSourceImpl implements TVSeriesLocalDataSource {
   final DatabaseHelper databaseHelper;
 
   TVSeriesLocalDataSourceImpl({required this.databaseHelper});
-
-
-  @override
-  Future<TVSeriesTable?> getMovieById(int id) async {
-    final result = await databaseHelper.getMovieById(id);
-    if (result != null) {
-      return TVSeriesTable.fromMap(result);
-    } else {
-      return null;
-    }
-  }
-
 
   @override
   Future<String> insertWatchlistTVSeries(TVSeriesTable tvseries) async {

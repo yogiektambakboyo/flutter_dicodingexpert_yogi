@@ -94,8 +94,8 @@ class TVSeriesDetailNotifier extends ChangeNotifier {
     await loadWatchlistStatus(tvseries.id);
   }
 
-  Future<void> removeFromWatchlist(TVSeriesDetail movie) async {
-    final result = await removeWatchlistTVSeries.execute(movie);
+  Future<void> removeFromWatchlist(TVSeriesDetail tvSeriesDetail) async {
+    final result = await removeWatchlistTVSeries.execute(tvSeriesDetail);
 
     await result.fold(
           (failure) async {
@@ -106,7 +106,7 @@ class TVSeriesDetailNotifier extends ChangeNotifier {
       },
     );
 
-    await loadWatchlistStatus(tvseries.id);
+    await loadWatchlistStatus(tvSeriesDetail.id);
   }
 
   Future<void> loadWatchlistStatus(int id) async {

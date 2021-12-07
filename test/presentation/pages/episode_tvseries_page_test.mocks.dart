@@ -6,9 +6,9 @@ import 'dart:async' as _i6;
 import 'dart:ui' as _i7;
 
 import 'package:ditonton/common/state_enum.dart' as _i4;
-import 'package:ditonton/domain/entities/tvseries.dart' as _i5;
-import 'package:ditonton/domain/usecases/get_popular_tvseries.dart' as _i2;
-import 'package:ditonton/presentation/provider/popular_tvseries_notifier.dart'
+import 'package:ditonton/domain/entities/tvseries_episode.dart' as _i5;
+import 'package:ditonton/domain/usecases/get_episode_tvseries.dart' as _i2;
+import 'package:ditonton/presentation/provider/tvseries_episode_notifier.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -18,27 +18,27 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: unnecessary_parenthesis
 
-class _FakeGetPopularTVSeries extends _i1.Fake implements _i2.GetPopularTVSeries {}
+class _FakeGetEpisodeTVSeries extends _i1.Fake implements _i2.GetEpisodeTVSeries {}
 
 /// A class which mocks [PopularTVSeriesNotifier].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockPopularTVSeriesNotifier extends _i1.Mock
-    implements _i3.PopularTVSeriesNotifier {
+    implements _i3.EpisodeTVSeriesNotifier {
   MockPopularTVSeriesNotifier() {
     _i1.throwOnMissingStub(this);
   }
 
   @override
-  _i2.GetPopularTVSeries get getPopularTVSeries =>
-      (super.noSuchMethod(Invocation.getter(#getPopularTVSeries),
-          returnValue: _FakeGetPopularTVSeries()) as _i2.GetPopularTVSeries);
+  _i2.GetEpisodeTVSeries get getEpisodeTVSeries =>
+      (super.noSuchMethod(Invocation.getter(#getEpisodeTVSeries),
+          returnValue: _FakeGetEpisodeTVSeries()) as _i2.GetEpisodeTVSeries);
   @override
   _i4.RequestState get state => (super.noSuchMethod(Invocation.getter(#state),
       returnValue: _i4.RequestState.Empty) as _i4.RequestState);
   @override
-  List<_i5.TVSeries> get tvseries => (super.noSuchMethod(Invocation.getter(#tvseries),
-      returnValue: <_i5.TVSeries>[]) as List<_i5.TVSeries>);
+  List<_i5.TVSeriesEpisode> get tvseries => (super.noSuchMethod(Invocation.getter(#tvseries),
+      returnValue: <_i5.TVSeriesEpisode>[]) as List<_i5.TVSeriesEpisode>);
   @override
   String get message =>
       (super.noSuchMethod(Invocation.getter(#message), returnValue: '')
@@ -48,8 +48,8 @@ class MockPopularTVSeriesNotifier extends _i1.Mock
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i6.Future<void> fetchPopularTVSeries() =>
-      (super.noSuchMethod(Invocation.method(#fetchPopularTVSeries, []),
+  _i6.Future<void> fetchEpisodeTVSeries(int id,int season) =>
+      (super.noSuchMethod(Invocation.method(#fetchEpisodeTVSeries, []),
           returnValue: Future<void>.value(),
           returnValueForMissingStub: Future.value()) as _i6.Future<void>);
   @override

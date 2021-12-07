@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:ditonton/data/datasources/tvseries_remote_data_source.dart';
 import 'package:ditonton/common/exception.dart';
 import 'package:ditonton/data/models/tvseries_detail_model.dart';
+import 'package:ditonton/data/models/tvseries_episode_response.dart';
 import 'package:ditonton/data/models/tvseries_response.dart';
+import 'package:ditonton/domain/entities/tvseries_episode.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:mockito/mockito.dart';
@@ -36,7 +38,7 @@ void main() {
               .thenAnswer((_) async =>
               http.Response(readJson('dummy_data/on_the_air.json'), 200));
           // act
-          final result = await dataSource.getOnTheAirTVSeries();
+          final result = await dataSource.getOnTheAir();
           // assert
           expect(result, equals(TVSeriesList));
         });
@@ -49,13 +51,42 @@ void main() {
               .get(Uri.parse('$BASE_URL/tv/on_the_air?$API_KEY')))
               .thenAnswer((_) async => http.Response('Not Found', 404));
           // act
-          final call = dataSource.getOnTheAirTVSeries();
+          final call = dataSource.getOnTheAir();
           // assert
           expect(() => call, throwsA(isA<ServerException>()));
         });
   });
 
-  group('get Popular TVSeriess', () {
+  group('Episode TVSeries',(){
+    final TVSeriesEpisodeList = TVSeriesEpisodeResponse.fromJson(json.decode(readJson('dummy_data/tvseries_episode.json'))).tvseriesEpisodeList;
+
+    test('should return list of movies when response is success (200)',
+            () async {
+          // arrange
+          when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/60735/season/1?$API_KEY')))
+              .thenAnswer((_) async =>
+              http.Response(readJson('dummy_data/tvseries_episode.json'), 200));
+          // act
+          final result = await dataSource.getEpisodeTVSeries(60735, 1);
+          // assert
+          expect(result, TVSeriesEpisodeList);
+        });
+
+    test(
+        'should throw a ServerException when the response code is 404 or other',
+            () async {
+          // arrange
+          when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/60735/season/1?$API_KEY')))
+              .thenAnswer((_) async => http.Response('Not Found', 404));
+          // act
+          final call = dataSource.getEpisodeTVSeries(60735, 1);
+          // assert
+          expect(() => call, throwsA(isA<ServerException>()));
+        });
+
+  });
+
+  group('get Popular TVSeries', () {
     final TVSeriesList =
         TVSeriesResponse.fromJson(json.decode(readJson('dummy_data/tvseries_popular.json')))
             .tvseriesList;
@@ -85,9 +116,9 @@ void main() {
         });
   });
 
-  group('get Top Rated TVSeriess', () {
+  group('get Top Rated TV Series', () {
     final TVSeriesList = TVSeriesResponse.fromJson(
-        json.decode(readJson('dummy_data/top_rated.json')))
+        json.decode(readJson('dummy_data/tvseries_top_rated.json')))
         .tvseriesList;
 
     test('should return list of movies when response code is 200 ', () async {

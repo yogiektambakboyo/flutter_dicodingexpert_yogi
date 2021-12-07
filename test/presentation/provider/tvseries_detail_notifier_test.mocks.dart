@@ -67,12 +67,12 @@ class MockGetTVSeriesRecommendations extends _i1.Mock
           .Future<_i3.Either<_i6.Failure, List<_i9.TVSeries>>>);
 }
 
-/// A class which mocks [GetWatchListStatus].
+/// A class which mocks [_i10.GetWatchListStatusTVSeries].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetWatchListStatusTVSeries extends _i1.Mock
     implements _i10.GetWatchListStatusTVSeries {
-  MockGetWatchListStatus() {
+  MockGetWatchListStatusTVSeries() {
     _i1.throwOnMissingStub(this);
   }
 
@@ -86,7 +86,7 @@ class MockGetWatchListStatusTVSeries extends _i1.Mock
           returnValue: Future<bool>.value(false)) as _i5.Future<bool>);
 }
 
-/// A class which mocks [SaveWatchlist].
+/// A class which mocks [_i11.SaveWatchlistTVSeries].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockSaveWatchlistTVSeries extends _i1.Mock implements _i11.SaveWatchlistTVSeries {
@@ -106,7 +106,7 @@ class MockSaveWatchlistTVSeries extends _i1.Mock implements _i11.SaveWatchlistTV
           as _i5.Future<_i3.Either<_i6.Failure, String>>);
 }
 
-/// A class which mocks [RemoveWatchlist].
+/// A class which mocks [_i12.RemoveWatchlistTVSeries].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockRemoveWatchlistTVSeries extends _i1.Mock implements _i12.RemoveWatchlistTVSeries {
@@ -119,8 +119,8 @@ class MockRemoveWatchlistTVSeries extends _i1.Mock implements _i12.RemoveWatchli
       (super.noSuchMethod(Invocation.getter(#repository),
           returnValue: _FakeTVSeriesRepository()) as _i2.TVSeriesRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, String>> execute(_i7.TVSeriesDetail? movie) =>
-      (super.noSuchMethod(Invocation.method(#execute, [movie]),
+  _i5.Future<_i3.Either<_i6.Failure, String>> execute(_i7.TVSeriesDetail? tvSeriesDetail) =>
+      (super.noSuchMethod(Invocation.method(#execute, [tvSeriesDetail]),
               returnValue: Future<_i3.Either<_i6.Failure, String>>.value(
                   _FakeEither<_i6.Failure, String>()))
           as _i5.Future<_i3.Either<_i6.Failure, String>>);

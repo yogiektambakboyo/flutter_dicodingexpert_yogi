@@ -4,7 +4,7 @@ import 'package:ditonton/domain/usecases/get_now_playing_tvseries.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../helpers/tvseries_test_helper.mocks.dart';
+import '../../helpers/test_helper.mocks.dart';
 
 void main() {
   late GetOnTheAirTVSeries usecase;
