@@ -34,11 +34,11 @@ class _EpisodeSeriesPageState extends State<EpisodeSeriesPage> {
         padding: const EdgeInsets.all(8.0),
         child: Consumer<EpisodeTVSeriesNotifier>(
           builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
+            if (data.state == RequestState.loading) {
               return Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (data.state == RequestState.loaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final tvserie = data.tvseries[index];

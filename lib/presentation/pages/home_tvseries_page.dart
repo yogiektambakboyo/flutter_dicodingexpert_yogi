@@ -108,11 +108,11 @@ class _TVSeriesPageState extends State<TVSeriesPage> {
               ),
               Consumer<TVSeriesListNotifier>(builder: (context, data, child) {
                 final state = data.onTheAirTVSeriesState;
-                if (state == RequestState.Loading) {
+                if (state == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.Loaded) {
+                } else if (state == RequestState.loaded) {
                   return TVSeriesList(data.onTheAirTVSeries);
                 } else {
                   return Text('Failed');
@@ -125,11 +125,11 @@ class _TVSeriesPageState extends State<TVSeriesPage> {
               ),
               Consumer<TVSeriesListNotifier>(builder: (context, data, child) {
                 final state = data.popularTVSeriesState;
-                if (state == RequestState.Loading) {
+                if (state == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.Loaded) {
+                } else if (state == RequestState.loaded) {
                   return TVSeriesList(data.popularTVSeries);
                 } else {
                   return Text('Failed');
@@ -142,11 +142,11 @@ class _TVSeriesPageState extends State<TVSeriesPage> {
               ),
               Consumer<TVSeriesListNotifier>(builder: (context, data, child) {
                 final state = data.topRatedTVSeriesState;
-                if (state == RequestState.Loading) {
+                if (state == RequestState.loading) {
                   return Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.Loaded) {
+                } else if (state == RequestState.loaded) {
                   return TVSeriesList(data.topRatedTVSeries);
                 } else {
                   return Text('Failed');

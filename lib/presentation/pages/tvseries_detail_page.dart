@@ -38,11 +38,11 @@ class _TVSeriesDetailPageState extends State<TVSeriesDetailPage> {
     return Scaffold(
       body: Consumer<TVSeriesDetailNotifier>(
         builder: (context, provider, child) {
-          if (provider.tvseriesState == RequestState.Loading) {
+          if (provider.tvseriesState == RequestState.loading) {
             return Center(
               child: CircularProgressIndicator(),
             );
-          } else if (provider.tvseriesState == RequestState.Loaded) {
+          } else if (provider.tvseriesState == RequestState.loaded) {
             final tvseries = provider.tvseries;
             return SafeArea(
               child: DetailContent(
@@ -187,15 +187,15 @@ class DetailContent extends StatelessWidget {
                             Consumer<TVSeriesDetailNotifier>(
                               builder: (context, data, child) {
                                 if (data.recommendationState ==
-                                    RequestState.Loading) {
+                                    RequestState.loading) {
                                   return Center(
                                     child: CircularProgressIndicator(),
                                   );
                                 } else if (data.recommendationState ==
-                                    RequestState.Error) {
+                                    RequestState.error) {
                                   return Text(data.message);
                                 } else if (data.recommendationState ==
-                                    RequestState.Loaded) {
+                                    RequestState.loaded) {
                                   return Container(
                                     height: 150,
                                     child: ListView.builder(
@@ -206,7 +206,7 @@ class DetailContent extends StatelessWidget {
                                           padding: const EdgeInsets.all(4.0),
                                           child: InkWell(
                                             onTap: () {
-                                              Navigator.pushReplacementNamed(
+                                              Navigator.pushNamed(
                                                 context,
                                                 TVSeriesDetailPage.ROUTE_NAME,
                                                 arguments: tvseries.id,
@@ -248,15 +248,15 @@ class DetailContent extends StatelessWidget {
                             Consumer<TVSeriesDetailNotifier>(
                               builder: (context, data, child){
                                 if (data.recommendationState ==
-                                    RequestState.Loading) {
+                                    RequestState.loading) {
                                   return Center(
                                     child: CircularProgressIndicator(),
                                   );
                                 } else if (data.recommendationState ==
-                                    RequestState.Error) {
+                                    RequestState.error) {
                                   return Text(data.message);
                                 } else if (data.recommendationState ==
-                                    RequestState.Loaded) {
+                                    RequestState.loaded) {
                                   return Container(
                                     height: 150,
                                     child: ListView.builder(

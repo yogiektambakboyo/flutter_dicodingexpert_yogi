@@ -104,19 +104,6 @@ class TVSeriesRemoteDataSourceImpl implements TVSeriesRemoteDataSource {
 
 
   @override
-  Future<List<TVSeriesModel>> getTVSeriesEpisodes(int id,int season) async {
-    final response = await client
-        .get(Uri.parse('$BASE_URL/tv/$id/season/$season?$API_KEY'));
-
-    if (response.statusCode == 200) {
-      return TVSeriesResponse.fromJson(json.decode(response.body)).tvseriesList;
-    } else {
-      throw ServerException();
-    }
-  }
-
-
-  @override
   Future<List<TVSeriesModel>> searchTVSeries(String query) async {
     final response = await client
         .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$query'));

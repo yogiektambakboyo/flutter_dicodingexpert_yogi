@@ -85,9 +85,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Dicoding Flutter Expert',
         theme: ThemeData.dark().copyWith(
-          colorScheme: kColorScheme,
+          colorScheme : kColorScheme,
           primaryColor: kRichBlack,
-          accentColor: kMikadoYellow,
           scaffoldBackgroundColor: kRichBlack,
           textTheme: kTextTheme,
         ),

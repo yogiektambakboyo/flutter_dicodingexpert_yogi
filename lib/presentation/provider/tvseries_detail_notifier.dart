@@ -30,13 +30,13 @@ class TVSeriesDetailNotifier extends ChangeNotifier {
   late TVSeriesDetail _tvseries;
   TVSeriesDetail get tvseries => _tvseries;
 
-  RequestState _tvseriesState = RequestState.Empty;
+  RequestState _tvseriesState = RequestState.empty;
   RequestState get tvseriesState => _tvseriesState;
 
   List<TVSeries> _tvseriesRecommendations = [];
   List<TVSeries> get tvseriesRecommendations => _tvseriesRecommendations;
 
-  RequestState _recommendationState = RequestState.Empty;
+  RequestState _recommendationState = RequestState.empty;
   RequestState get recommendationState => _recommendationState;
 
   String _message = '';
@@ -46,31 +46,31 @@ class TVSeriesDetailNotifier extends ChangeNotifier {
   bool get isAddedToWatchlist => _isAddedtoWatchlist;
 
   Future<void> fetchTVSeriesDetail(int id) async {
-    _tvseriesState = RequestState.Loading;
+    _tvseriesState = RequestState.loading;
     notifyListeners();
     final detailResult = await getTVSeriesDetail.execute(id);
     final recommendationResult = await getTVSeriesRecommendations.execute(id);
     detailResult.fold(
           (failure) {
-        _tvseriesState = RequestState.Error;
+        _tvseriesState = RequestState.error;
         _message = failure.message;
         notifyListeners();
       },
           (tvseries) {
-            _recommendationState = RequestState.Loading;
+            _recommendationState = RequestState.loading;
         _tvseries = tvseries;
         notifyListeners();
         recommendationResult.fold(
               (failure) {
-            _recommendationState = RequestState.Error;
+            _recommendationState = RequestState.error;
             _message = failure.message;
           },
               (movies) {
-            _recommendationState = RequestState.Loaded;
+            _recommendationState = RequestState.loaded;
             _tvseriesRecommendations = movies;
           },
         );
-        _tvseriesState = RequestState.Loaded;
+        _tvseriesState = RequestState.loaded;
         notifyListeners();
       },
     );
